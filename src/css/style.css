@@ -124,11 +124,11 @@ li {
 
 .input-email {
   font-family: 'Montserrat', sans-serif;
-
   height: 40px;
   border: 1px solid #808080;
   border-radius: 3.5px;
   padding-left: 16px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-email::placeholder {
@@ -140,6 +140,10 @@ li {
   color: #2e2f42;
 }
 
+.input-email:hover {
+  border: 1px solid black;
+}
+
 .message {
   font-family: 'Montserrat', sans-serif;
 
@@ -148,6 +152,11 @@ li {
   border-radius: 3.5px;
   resize: none;
   padding: 8px 16px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.message:hover {
+  border: 1px solid black;
 }
 
 .message::placeholder {

@@ -28,6 +28,41 @@ li {
   margin: 0;
   padding: 0;
 }
+
+.back-to-main{
+		background: linear-gradient(to right, #ff6b6b, #ffa39e);
+		color: #fff;
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+		border-radius: 4px;
+		padding: 12px 24px;
+		font-size: 18px;
+		margin: 10px;
+		transition: transform 0.3s ease;
+		transition: background-color 0.3s ease;
+}
+
+.back-to-main:hover {
+    background-color: #333;
+    color: #fff;
+	transform: scale(1.1);
+}
+
+.main-to-next-page{
+	background: linear-gradient(to right, #ff6b6b, #ffa39e);
+	color: #fff;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	padding: 12px 24px;
+	font-size: 18px;
+	margin: 10px;
+	transition: transform 0.3s ease;
+	transition: background-color 0.3s ease;
+}
+.main-to-next-page:hover{
+    background-color: #333;
+    color: #fff;
+	transform: scale(1.1);
+}
 /**----------------- Gallery ------------------**/
 .gallery-image {
   object-fit: cover;

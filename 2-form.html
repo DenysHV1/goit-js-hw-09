@@ -18,20 +18,25 @@
     />
     <script type="module" crossorigin src="/goit-js-hw-09/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-js-hw-09/assets/modulepreload-polyfill-3cfb730f.js">
-    <link rel="stylesheet" href="/goit-js-hw-09/assets/style-38b69cb5.css">
+    <link rel="stylesheet" href="/goit-js-hw-09/assets/style-b539cc87.css">
   </head>
   <body>
     <a class="back-to-main" href="./index.html">Back</a>
     <form class="feedback-form" autocomplete="off">
       <label class="label-1">
         Email
-        <input required class="input-email" type="email" name="email" autofocus />
+        <input class="input-email" type="email" name="email" autofocus />
       </label>
+	  <p class="error"></p>
       <label class="label-2">
         Message
-        <textarea required class="message" name="message" rows="8"></textarea>
+        <textarea class="message" name="message" rows="8"></textarea>
       </label>
-      <button class="form-button" type="submit">Submit</button>
+	  <div class="container-button-sucsses">
+		<button class="form-button" type="submit">Submit</button>
+		<p class="text"></p>
+		<p class="empty-error"></p>
+	  </div>
     </form>
     
   </body>

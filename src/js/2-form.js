@@ -18,7 +18,6 @@ function oneClickSend(event) {
 
   const resultObjUser = new User(email.trim().toLowerCase(), message.trim());
   console.log(resultObjUser);
-  localStorage.removeItem('feedback-form-state');
 }
 
 const feedbackFormState = {

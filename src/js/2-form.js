@@ -57,7 +57,7 @@ function oneClickSend(event) {
   }
   emailError.textContent = '';
 
-  if (email.length === 0 && message.length === 0) {
+  if (email.length === 0) {
     return (emptyError.textContent = 'Fill please all fields');
   }
   emptyError.textContent = '';

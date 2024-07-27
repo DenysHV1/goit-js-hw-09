@@ -4,7 +4,7 @@ const message = document.querySelector('.message');
 const done = document.querySelector('.text');
 const emailError = document.querySelector('.error');
 const emptyError = document.querySelector('.empty-error');
-class User {
+class ClassData {
   constructor(email, message) {
     this.email = email;
     this.message = message;
@@ -56,7 +56,7 @@ function oneClickSend(event) {
     }
   }
   emailError.textContent = '';
-  
+
   if (email.length === 0 && message.length === 0) {
     return (emptyError.textContent = 'Fill please all fields');
   }
@@ -67,8 +67,8 @@ function oneClickSend(event) {
   }
   emptyError.textContent = '';
 
-  const resultObjUser = new User(email.trim().toLowerCase(), message.trim());
-  console.log(resultObjUser);
+  const formData = new ClassData(email.trim().toLowerCase(), message.trim());
+  console.log(formData);
   done.textContent = 'Success!';
 }
 

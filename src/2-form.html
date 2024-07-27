@@ -22,13 +22,18 @@
     <form class="feedback-form" autocomplete="off">
       <label class="label-1">
         Email
-        <input required class="input-email" type="email" name="email" autofocus />
+        <input class="input-email" type="email" name="email" autofocus />
       </label>
+	  <p class="error"></p>
       <label class="label-2">
         Message
-        <textarea required class="message" name="message" rows="8"></textarea>
+        <textarea class="message" name="message" rows="8"></textarea>
       </label>
-      <button class="form-button" type="submit">Submit</button>
+	  <div class="container-button-sucsses">
+		<button class="form-button" type="submit">Submit</button>
+		<p class="text"></p>
+		<p class="empty-error"></p>
+	  </div>
     </form>
     <script type="module" src="./js/2-form.js"></script>
   </body>

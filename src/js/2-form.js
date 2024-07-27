@@ -1,7 +1,9 @@
 const form = document.querySelector('.feedback-form');
 const inputEmail = document.querySelector('.input-email');
 const message = document.querySelector('.message');
-
+const done = document.querySelector('.text');
+const emailError = document.querySelector('.error');
+const emptyError = document.querySelector('.empty-error');
 class User {
   constructor(email, message) {
     this.email = email;
@@ -15,9 +17,54 @@ function oneClickSend(event) {
   event.preventDefault();
   const email = event.target.elements.email.value;
   const message = event.target.elements.message.value;
+  const array = [
+    '!',
+    '£',
+    '$',
+    '%',
+    '^',
+    '&',
+    '*',
+    '(',
+    ')',
+    '_',
+    '-',
+    '+',
+    '=',
+    '#',
+    '~',
+    '/',
+    '?',
+    '{',
+    '}',
+    '[',
+    ']',
+    '`',
+    '¬',
+    '|',
+    '"',
+    ',',
+    '<',
+    '>',
+    ':',
+    ';',
+  ];
+  for (let i = 0; i < array.length; i += 1) {
+    if (email.includes(array[i])) {
+      emailError.textContent = `Invalid character in name: ${array[i]}`;
+      return emailError.textContent;
+    }
+  }
+  emailError.textContent = '';
+  
+  if (email.length < 3 && message.length < 3) {
+    return (emptyError.textContent = 'Fill please all fields');
+  }
+  emptyError.textContent = '';
 
   const resultObjUser = new User(email.trim().toLowerCase(), message.trim());
   console.log(resultObjUser);
+  done.textContent = 'Success!';
 }
 
 const feedbackFormState = {

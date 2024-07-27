@@ -128,6 +128,7 @@ li {
   width: 408px;
   height: 296px;
   margin: 0 auto;
+  position: relative;
 }
 
 .label-1 {
@@ -222,6 +223,39 @@ li {
   background-color: #6c8cff;
 }
 
+.container-button-sucsses{
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
+
+.text{
+	color: #2fc71e;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+  line-height: 150%;
+  margin: 0;
+}
+
+.error{
+	position: absolute;
+	left: 182px;
+	top: 79px;
+	white-space: nowrap;
+	padding: 5px;
+	border-radius: 3px;
+	color: red;
+}
+
+.empty-error{
+	position: absolute;
+	left: 129px;
+	top: 215px;
+	white-space: nowrap;
+	padding: 5px;
+	border-radius: 3px;
+	color: red;
+}
 /**-----------------little-Media------------------**/
 @media (max-width: 1000px) {
   .gallery-item {

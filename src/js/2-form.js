@@ -5,17 +5,6 @@ const done = document.querySelector('.text');
 const emailError = document.querySelector('.error');
 const emptyError = document.querySelector('.empty-error');
 
-const formData = {
-  userEmail: '',
-  userMessage: '',
-};
-
-if (localStorage.getItem('feedback-form-state')) {
-  const storedData = JSON.parse(localStorage.getItem('feedback-form-state'));
-  inputEmail.value = storedData.email;
-  message.value = storedData.message;
-}
-
 form.addEventListener('submit', oneClickSend);
 
 function oneClickSend(event) {
@@ -47,7 +36,7 @@ function oneClickSend(event) {
   emptyError.textContent = '';
 
   //result
-  const formData = {
+   const formData = {
     userEmail: email,
     userMessage: message,
   };
@@ -58,9 +47,16 @@ function oneClickSend(event) {
   localStorage.removeItem('feedback-form-state');
 }
 
+const storedData = JSON.parse(localStorage.getItem('feedback-form-state'));
+
+if (localStorage.getItem('feedback-form-state')) {
+	inputEmail.value = storedData.email;
+	message.value = storedData.message;
+  }
+
 const feedbackFormState = {
-  email: '',
-  message: '',
+	email: storedData.email,
+	message: storedData.message,
 };
 
 inputEmail.addEventListener('input', event => {

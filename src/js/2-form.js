@@ -47,30 +47,38 @@ function oneClickSend(event) {
   localStorage.removeItem('feedback-form-state');
 }
 
-const storedData = JSON.parse(localStorage.getItem('feedback-form-state'));
+local ()
 
-if (localStorage.getItem('feedback-form-state')) {
-	inputEmail.value = storedData.email;
-	message.value = storedData.message;
+function local() {
+		const storageData = JSON.parse(localStorage.getItem('feedback-form-state')) || {
+			email: '',
+			message: '',
+		  };
+
+		if (storageData === null) {
+			return;
+		}
+
+	const feedbackFormState = {
+	  email: storageData.email,
+	  message: storageData.message,
+	};
+  
+	inputEmail.addEventListener('input', event => {
+	  feedbackFormState.email = event.target.value;
+	  saveData();
+	});
+  
+	message.addEventListener('input', event => {
+	  feedbackFormState.message = event.target.value;
+	  saveData();
+	});
+  
+	function saveData() {
+	  localStorage.setItem('feedback-form-state', JSON.stringify(feedbackFormState));
+	}
+  
+	inputEmail.value = feedbackFormState.email;
+	message.value = feedbackFormState.message;
   }
 
-const feedbackFormState = {
-	email: storedData.email,
-	message: storedData.message,
-};
-
-inputEmail.addEventListener('input', event => {
-  feedbackFormState.email = event.target.value;
-  localStorage.setItem(
-    'feedback-form-state',
-    JSON.stringify(feedbackFormState)
-  );
-});
-
-message.addEventListener('input', event => {
-  feedbackFormState.message = event.target.value;
-  localStorage.setItem(
-    'feedback-form-state',
-    JSON.stringify(feedbackFormState)
-  );
-});
